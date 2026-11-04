@@ -124,6 +124,8 @@ export default function NoticesPage() {
                   <div className="shrink-0">
                     <Link
                       href={item.href}
+                      target={item.href.startsWith('http') ? '_blank' : undefined}
+                      rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                       className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-neutral-slate hover:bg-primary hover:text-white text-xs font-semibold text-neutral-dark transition-all"
                     >
                       <span>Read Notice</span>

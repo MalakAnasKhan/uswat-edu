@@ -1,11 +1,12 @@
-import http from 'http';
+import fs from 'fs';
+import path from 'path';
 
 const ENDPOINTS = [
   '/',
   '/admissions',
   '/examinations',
   '/departments',
-  '/departments/computer-science-it',
+  '/departments/computer-and-software-technology',
   '/downloads',
   '/about',
   '/about/vc-message',
@@ -14,14 +15,13 @@ const ENDPOINTS = [
   '/contact',
 ];
 
-function fetchPage(path) {
-  return new Promise((resolve, reject) => {
-    http.get(`http://127.0.0.1:3000${path}`, (res) => {
-      let data = '';
-      res.on('data', (chunk) => (data += chunk));
-      res.on('end', () => resolve({ path, status: res.statusCode, html: data }));
-    }).on('error', reject);
-  });
+function getHtml(routePath) {
+  const normalized = routePath === '/' ? 'index.html' : `${routePath.replace(/^\//, '')}.html`;
+  const filePath = path.join(process.cwd(), '.next', 'server', 'app', normalized);
+  if (fs.existsSync(filePath)) {
+    return { path: routePath, status: 200, html: fs.readFileSync(filePath, 'utf-8') };
+  }
+  throw new Error(`Compiled HTML not found: ${filePath}`);
 }
 
 async function runAudit() {
@@ -30,23 +30,23 @@ async function runAudit() {
   let passed = true;
   const issues = [];
 
-  for (const path of ENDPOINTS) {
+  for (const routePath of ENDPOINTS) {
     try {
-      const page = await fetchPage(path);
+      const page = getHtml(routePath);
       if (page.status !== 200) {
-        issues.push(`[HTTP ${page.status}] ${path} did not return 200 OK`);
+        issues.push(`[HTTP ${page.status}] ${routePath} did not return 200 OK`);
         passed = false;
         continue;
       }
 
-      console.log(`✓ [200 OK] ${path} (HTML Length: ${page.html.length.toLocaleString()} bytes)`);
+      console.log(`✓ [200 OK] ${routePath} (HTML Length: ${page.html.length.toLocaleString()} bytes)`);
 
       // 1. Audit Images for alt attributes
       const imgRegex = /<img\s+[^>]*>/gi;
       const imgs = page.html.match(imgRegex) || [];
       for (const img of imgs) {
         if (!/alt\s*=\s*["'][^"']+["']/i.test(img)) {
-          issues.push(`[Missing Alt] on ${path}: ${img}`);
+          issues.push(`[Missing Alt] on ${routePath}: ${img}`);
           passed = false;
         }
       }
@@ -60,22 +60,22 @@ async function runAudit() {
 
         // Ensure external links have rel="noopener noreferrer" and target="_blank"
         if (!/target\s*=\s*["']_blank["']/i.test(fullTag)) {
-          issues.push(`[Missing target="_blank"] on ${path} for external link ${url}`);
+          issues.push(`[Missing target="_blank"] on ${routePath} for external link ${url}`);
           passed = false;
         }
         if (!/rel\s*=\s*["'][^"']*noopener[^"']*["']/i.test(fullTag)) {
-          issues.push(`[Missing rel="noopener"] on ${path} for external link ${url}`);
+          issues.push(`[Missing rel="noopener"] on ${routePath} for external link ${url}`);
           passed = false;
         }
       }
 
       // 3. Check for obvious uncaught exceptions or error text
       if (page.html.includes('Internal Server Error') || page.html.includes('Unhandled Runtime Error')) {
-        issues.push(`[Runtime Error detected in page body] ${path}`);
+        issues.push(`[Runtime Error detected in page body] ${routePath}`);
         passed = false;
       }
     } catch (err) {
-      issues.push(`[Fetch Failed] ${path}: ${err.message}`);
+      issues.push(`[Audit Failed] ${routePath}: ${err.message}`);
       passed = false;
     }
   }

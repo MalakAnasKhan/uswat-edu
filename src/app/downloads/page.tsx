@@ -74,11 +74,10 @@ export default function DownloadsPage() {
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
                   type="button"
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                    selectedCategory === cat
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${selectedCategory === cat
                       ? 'bg-primary text-white shadow-soft'
                       : 'bg-neutral-slate text-neutral-textMuted hover:text-neutral-dark'
-                  }`}
+                    }`}
                 >
                   {cat}
                 </button>
@@ -132,7 +131,9 @@ export default function DownloadsPage() {
                   <div className="shrink-0 flex items-center gap-3">
                     <a
                       href={item.downloadUrl}
-                      download
+                      target={item.downloadUrl.startsWith('http') ? '_blank' : undefined}
+                      rel={item.downloadUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      download={!item.downloadUrl.startsWith('http')}
                       className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-secondary hover:bg-secondary-dark text-primary font-bold text-xs shadow-soft transition-all"
                     >
                       <Download className="w-4 h-4" />

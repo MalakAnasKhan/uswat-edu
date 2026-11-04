@@ -102,6 +102,8 @@ export default function Hero() {
               <div className="flex-1 min-w-0">
                 <Link
                   href={urgentNotice.href}
+                  target={urgentNotice.href.startsWith('http') ? '_blank' : undefined}
+                  rel={urgentNotice.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="group flex items-center gap-2 text-xs sm:text-sm text-white/95 hover:text-secondary-light transition-colors"
                 >
                   <span className="truncate font-medium">{urgentNotice.title}</span>

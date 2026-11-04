@@ -108,7 +108,11 @@ export default function NoticeBoard() {
 
                   {/* Title */}
                   <h3 className="text-sm sm:text-base font-semibold text-neutral-dark group-hover:text-primary transition-colors line-clamp-3 leading-snug">
-                    <Link href={notice.href}>
+                    <Link
+                      href={notice.href}
+                      target={notice.href.startsWith('http') ? '_blank' : undefined}
+                      rel={notice.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    >
                       {notice.title}
                     </Link>
                   </h3>
@@ -123,6 +127,8 @@ export default function NoticeBoard() {
 
                   <Link
                     href={notice.href}
+                    target={notice.href.startsWith('http') ? '_blank' : undefined}
+                    rel={notice.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:text-secondary-dark transition-colors shrink-0"
                   >
                     <span>View Notice</span>
