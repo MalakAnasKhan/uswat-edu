@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0A4D2E;
+  --primary-foreground: #FFFFFF;
+  --secondary: #C59B27;
+  --secondary-foreground: #0A4D2E;
+  --neutral-dark: #0F172A;
+  --neutral-light: #F8FAFC;
+  --neutral-slate: #F1F5F9;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #0F172A;
+  background-color: #F8FAFC;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+/* Accessible keyboard navigation focus rings */
+:focus-visible {
+  outline: 2px solid #C59B27;
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #C59B27;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0A4D2E55;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0A4D2E99;
+}
+
+::selection {
+  background-color: #C59B27;
+  color: #0A4D2E;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
