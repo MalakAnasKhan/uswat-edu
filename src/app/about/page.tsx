@@ -245,6 +245,26 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+
+            {/* Official University Motto Card */}
+            <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#073620] to-[#0A4D2E] text-white shadow-soft flex flex-col sm:flex-row items-center justify-between gap-6 border border-emerald-800">
+              <div className="space-y-1 text-center sm:text-left">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-secondary">
+                  Official Institutional Motto
+                </span>
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">
+                  "Aspiring for Quality Education with Relevance"
+                </h3>
+              </div>
+              <div className="text-center sm:text-right shrink-0">
+                <p className="text-lg sm:text-xl text-secondary-light font-serif font-medium" dir="rtl">
+                  "مطابقت کے ساتھ معیاری تعلیم کے لئے خواہشمند"
+                </p>
+                <span className="text-[11px] text-white/70 block mt-0.5">
+                  University of Swat Charter • Khyber Pakhtunkhwa
+                </span>
+              </div>
+            </div>
           </div>
         )}
 

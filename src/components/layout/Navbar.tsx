@@ -225,7 +225,7 @@ export default function Navbar() {
                 </span>
               </div>
               <span className="text-[11px] sm:text-xs text-neutral-textMuted tracking-normal">
-                Charbagh, Khyber Pakhtunkhwa
+                Aspiring for Quality Education with Relevance
               </span>
             </div>
           </Link>

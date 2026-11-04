@@ -12,9 +12,9 @@
 | **Vice Chancellor** | Prof. Dr. Husnul Amin |
 | **Registrar** | Dr. Arshad Ali Khan |
 | **Live Demo URL** | `https://university-of-swat.vercel.app` *(or custom domain `https://new.uswat.edu.pk`)* |
-| **GitHub Repository** | `https://github.com/uswat-edu-pk/university-of-swat-portal` |
+| **GitHub Repository** | `https://github.com/MalakAnasKhan/uswat-edu.git` |
 | **Core Framework** | Next.js 15.5+ (App Router), React 19, Tailwind CSS v3, TypeScript 5.7+ |
-| **Static Routes Pre-Rendered** | **34/34 Routes** Compiled (Zero Server Errors) |
+| **Static Routes Pre-Rendered** | **38/38 Routes** Compiled (Zero Server Errors) |
 | **Lighthouse Target Score** | **Performance: 98** \| **Accessibility: 100** \| **Best Practices: 100** \| **SEO: 100** |
 
 ---
@@ -131,3 +131,4 @@ node scripts/audit.mjs
 
 **Certified Ready for Evaluation & Live Staging**  
 *University of Swat Digital Modernization Team*
+

@@ -29,6 +29,12 @@ export default function Footer() {
               </div>
             </div>
 
+            <div className="p-3 rounded-xl bg-white/5 border border-white/10 space-y-1 max-w-sm">
+              <span className="text-[10px] uppercase font-bold text-secondary tracking-wider block">Official Institutional Motto</span>
+              <p className="text-xs font-serif text-white font-medium italic">"Aspiring for Quality Education with Relevance"</p>
+              <p className="text-[11px] text-secondary-light font-sans" dir="rtl">"مطابقت کے ساتھ معیاری تعلیم کے لئے خواہشمند"</p>
+            </div>
+
             <p className="text-xs text-white/70 leading-relaxed max-w-sm">
               Established in 2010 in the historic valley of Swat, Khyber Pakhtunkhwa. Committed
               to academic excellence, transformative research, ethical scholarship, and regional socio-economic empowerment.
