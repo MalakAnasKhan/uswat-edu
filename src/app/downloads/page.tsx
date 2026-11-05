@@ -29,7 +29,7 @@ export default function DownloadsPage() {
 
   return (
     <div className="py-12 bg-neutral-light min-h-[80vh]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         {/* Header Breadcrumbs */}
         <div className="mb-6 flex items-center gap-2 text-xs text-neutral-textMuted">
           <Link href="/" className="hover:text-primary transition-colors">

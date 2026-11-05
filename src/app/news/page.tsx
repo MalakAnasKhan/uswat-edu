@@ -45,7 +45,7 @@ export default function NewsHubPage() {
     <div className="min-h-screen bg-neutral-light pb-20">
       {/* Hero Header */}
       <div className="bg-[#073620] text-white py-14 sm:py-16 border-b border-emerald-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 text-secondary-light text-xs font-bold mb-3 border border-secondary/30">
@@ -75,7 +75,7 @@ export default function NewsHubPage() {
       </div>
 
       {/* Main Content Area */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 -mt-6">
         {/* Controls Card (Search + Filter) */}
         <div className="bg-white rounded-2xl p-4 sm:p-6 border border-neutral-border shadow-soft space-y-4">
           <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center justify-between">

@@ -51,11 +51,10 @@ export default function NoticeBoard() {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 type="button"
-                className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200 ${
-                  activeTab === tab
+                className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200 ${activeTab === tab
                     ? 'bg-primary text-white shadow-soft'
                     : 'text-neutral-charcoal hover:text-primary hover:bg-white/60'
-                }`}
+                  }`}
               >
                 {tab}
               </button>
@@ -73,10 +72,10 @@ export default function NoticeBoard() {
             const badgeStyles = isAdm
               ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
               : isExam
-              ? 'bg-amber-50 text-amber-900 border-amber-200'
-              : isTender
-              ? 'bg-blue-50 text-blue-900 border-blue-200'
-              : 'bg-neutral-slate text-neutral-dark border-neutral-border';
+                ? 'bg-amber-50 text-amber-900 border-amber-200'
+                : isTender
+                  ? 'bg-blue-50 text-blue-900 border-blue-200'
+                  : 'bg-neutral-slate text-neutral-dark border-neutral-border';
 
             return (
               <div

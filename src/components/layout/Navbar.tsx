@@ -340,8 +340,6 @@ export default function Navbar() {
               <span className="whitespace-nowrap">Apply Now</span>
               <Sparkles className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-primary shrink-0" />
             </Link>
-              <Sparkles className="w-4 h-4 text-primary" />
-            </Link>
 
             {/* Mobile menu trigger */}
             <button

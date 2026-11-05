@@ -286,7 +286,7 @@ export default function AdminNewsView() {
 
       {/* Admin Top Banner */}
       <div className="bg-[#073620] text-white py-8 border-b border-emerald-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-secondary border border-white/15">
@@ -356,7 +356,7 @@ export default function AdminNewsView() {
       </div>
 
       {/* Main Admin Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-6">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 mt-8 space-y-6">
         {/* Action Header Card */}
         <div className="bg-white rounded-2xl p-4 sm:p-6 border border-neutral-border shadow-soft flex flex-col md:flex-row md:items-center justify-between gap-4">
           {/* Search & Category Filter */}

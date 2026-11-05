@@ -31,7 +31,7 @@ export default function DepartmentView({ department }: DepartmentViewProps) {
 
   return (
     <div className="py-10 bg-neutral-light min-h-[85vh]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         {/* Breadcrumb Navigation */}
         <nav className="mb-6 flex items-center space-x-2 text-xs text-neutral-textMuted overflow-x-auto whitespace-nowrap">
           <Link href="/" className="hover:text-primary transition-colors">
@@ -112,11 +112,10 @@ export default function DepartmentView({ department }: DepartmentViewProps) {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as TabType)}
                 type="button"
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
-                  isActive
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${isActive
                     ? 'bg-primary text-white shadow-soft'
                     : 'text-neutral-textMuted hover:text-neutral-dark hover:bg-neutral-slate'
-                }`}
+                  }`}
               >
                 <Icon className={`w-4 h-4 ${isActive ? 'text-secondary' : 'text-neutral-textMuted'}`} />
                 <span>{tab.label}</span>
@@ -281,10 +280,10 @@ export default function DepartmentView({ department }: DepartmentViewProps) {
                   </div>
                 </div>
               )) || (
-                <div className="col-span-full py-12 text-center text-sm text-neutral-textMuted">
-                  Details for programs currently in update.
-                </div>
-              )}
+                  <div className="col-span-full py-12 text-center text-sm text-neutral-textMuted">
+                    Details for programs currently in update.
+                  </div>
+                )}
             </div>
           </div>
         )}

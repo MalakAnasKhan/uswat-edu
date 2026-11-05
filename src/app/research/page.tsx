@@ -141,7 +141,7 @@ const LAB_FACILITIES = [
 export default function ResearchPage() {
   return (
     <div className="py-10 bg-neutral-light min-h-[85vh]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 space-y-12">
         {/* Breadcrumb Navigation */}
         <nav className="flex items-center space-x-2 text-xs text-neutral-textMuted">
           <Link href="/" className="hover:text-primary transition-colors">
