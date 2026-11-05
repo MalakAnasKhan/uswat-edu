@@ -12,6 +12,9 @@ const ENDPOINTS = [
   '/about/vc-message',
   '/research',
   '/notices',
+  '/news',
+  '/news/vc-inaugurates-ai-computing-research-lab',
+  '/admin/news',
   '/contact',
 ];
 

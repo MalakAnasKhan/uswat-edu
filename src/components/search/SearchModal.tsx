@@ -3,18 +3,19 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, X, BookOpen, FileText, Bell, ExternalLink, ArrowRight } from 'lucide-react';
+import { Search, X, BookOpen, FileText, Bell, ExternalLink, ArrowRight, Newspaper } from 'lucide-react';
 import Link from 'next/link';
 import Fuse from 'fuse.js';
 import { NOTICES } from '@/data/notices';
 import { DOWNLOADS } from '@/data/downloads';
 import { DEPARTMENTS } from '@/data/departments';
+import { INITIAL_NEWS } from '@/data/news';
 
 interface SearchItem {
   id: string;
   title: string;
   description?: string;
-  category: 'Notice' | 'Download' | 'Department';
+  category: 'Notice' | 'Download' | 'Department' | 'News';
   subCategory?: string;
   href: string;
 }
@@ -65,6 +66,18 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         category: 'Download',
         subCategory: dl.category,
         href: dl.downloadUrl,
+      });
+    });
+
+    // News Articles
+    INITIAL_NEWS.forEach((news) => {
+      list.push({
+        id: `news-${news.id}`,
+        title: news.title,
+        description: `${news.category} • ${news.publishedAt} • ${news.summary.slice(0, 75)}...`,
+        category: 'News',
+        subCategory: news.category,
+        href: `/news/${news.slug}`,
       });
     });
 
@@ -181,6 +194,8 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                         return <FileText className="w-4 h-4 text-secondary-dark" />;
                       case 'Notice':
                         return <Bell className="w-4 h-4 text-emerald-600" />;
+                      case 'News':
+                        return <Newspaper className="w-4 h-4 text-purple-600" />;
                     }
                   };
 
@@ -192,6 +207,8 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                         return 'bg-amber-50 text-amber-900 border-amber-200';
                       case 'Notice':
                         return 'bg-blue-50 text-blue-800 border-blue-200';
+                      case 'News':
+                        return 'bg-purple-50 text-purple-900 border-purple-200';
                     }
                   };
 

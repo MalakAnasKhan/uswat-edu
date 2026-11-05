@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Phone, Mail, MapPin, GraduationCap, Inbox, FileDown, Search, ExternalLink } from 'lucide-react';
+import { Phone, Mail, MapPin, GraduationCap, Inbox, FileDown, Search, ExternalLink, Newspaper } from 'lucide-react';
 import SearchModal from '@/components/search/SearchModal';
 
 export default function TopBar() {
@@ -73,6 +73,15 @@ export default function TopBar() {
                 <FileDown className="w-3.5 h-3.5 text-secondary" />
                 <span className="hidden sm:inline">Downloads / Examination</span>
                 <span className="sm:hidden">Downloads</span>
+              </Link>
+
+              <Link
+                href="/news"
+                className="hidden md:inline-flex items-center gap-1.5 hover:text-secondary-light transition-colors"
+                title="University News & Press Releases"
+              >
+                <Newspaper className="w-3.5 h-3.5 text-secondary" />
+                <span>News</span>
               </Link>
 
               {/* Fast Modal Search Trigger */}

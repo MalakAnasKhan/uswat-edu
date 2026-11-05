@@ -164,6 +164,27 @@ const NAVIGATION_ITEMS: NavItem[] = [
       },
     ],
   },
+  {
+    title: 'News & Media',
+    items: [
+      {
+        name: 'Latest News & Stories',
+        description: 'Weekly photo stories, research breakthroughs & event chronicles',
+        href: '/news',
+        badge: 'New',
+      },
+      {
+        name: 'Official Notifications',
+        description: 'Tenders, statutory circulars, and departmental notifications',
+        href: '/notices',
+      },
+      {
+        name: 'Admin Post Desk',
+        description: 'Publish and curate news stories (Authorized Personnel)',
+        href: '/admin/news',
+      },
+    ],
+  },
 ];
 
 export default function Navbar() {

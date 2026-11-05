@@ -163,6 +163,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/news" className="hover:text-secondary-light transition-colors">
+                  News & Media Directorate
+                </Link>
+              </li>
+              <li>
+                <Link href="/admin/news" className="hover:text-secondary-light transition-colors text-white/50 text-[11px]">
+                  Admin Post Desk
+                </Link>
+              </li>
+              <li>
                 <span className="inline-flex items-center gap-1 text-[11px] text-white/60">
                   <ShieldCheck className="w-3.5 h-3.5 text-secondary" /> Recognized by HEC Pakistan
                 </span>

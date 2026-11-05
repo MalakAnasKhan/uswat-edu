@@ -14,6 +14,7 @@ import {
 import Hero from '@/components/home/Hero';
 import QuickLinks from '@/components/home/QuickLinks';
 import NoticeBoard from '@/components/home/NoticeBoard';
+import LatestNews from '@/components/home/LatestNews';
 import VCSpotlight from '@/components/home/VCSpotlight';
 import CampusLife from '@/components/home/CampusLife';
 import { DEPARTMENTS, FACULTIES } from '@/data/departments';
@@ -30,7 +31,10 @@ export default function HomePage() {
       {/* 3. Official Notice Board with Categorized Tabs */}
       <NoticeBoard />
 
-      {/* 4. Vice Chancellor's Leadership Spotlight */}
+      {/* 4. Latest News & Weekly Updates Showcase with Pictures */}
+      <LatestNews />
+
+      {/* 5. Vice Chancellor's Leadership Spotlight */}
       <VCSpotlight />
 
       {/* 5. Academic Programs & Faculties Showcase (Target for 'Explore Programs' anchor) */}
