@@ -11,7 +11,7 @@ export default function TopBar() {
   return (
     <>
       <div className="bg-[#073620] text-white/90 text-xs border-b border-emerald-900/40 select-none">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="flex items-center justify-between h-9 sm:h-10">
             {/* Left Utility Info */}
             <div className="flex items-center space-x-3 sm:space-x-6 overflow-x-auto py-1 scrollbar-none">

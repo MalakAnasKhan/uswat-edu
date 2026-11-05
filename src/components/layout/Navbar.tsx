@@ -222,37 +222,37 @@ export default function Navbar() {
         isScrolled ? 'shadow-md border-b border-neutral-border' : 'border-b border-neutral-slate'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+        <div className="flex items-center justify-between h-20 gap-2 xl:gap-4">
           {/* Brand Logo & Title Area */}
-          <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+            <div className="relative w-11 h-11 sm:w-13 sm:h-13 xl:w-14 xl:h-14 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
               <Image
                 src="/images/Logo.png"
                 alt="University of Swat Crest"
                 fill
-                sizes="(max-width: 640px) 48px, 56px"
+                sizes="(max-width: 640px) 44px, 56px"
                 className="object-contain"
                 priority
               />
             </div>
             <div className="flex flex-col">
-              <div className="flex items-center gap-2">
-                <span className="font-extrabold text-lg sm:text-xl tracking-tight text-primary font-serif">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <span className="font-extrabold text-base sm:text-lg xl:text-xl tracking-tight text-primary font-serif whitespace-nowrap">
                   University of Swat
                 </span>
-                <span className="hidden xs:inline-block px-1.5 py-0.5 rounded text-[11px] font-medium bg-secondary/15 text-secondary-dark font-sans">
+                <span className="hidden xs:inline-block px-1.5 py-0.2 rounded text-[10px] xl:text-[11px] font-medium bg-secondary/15 text-secondary-dark font-sans whitespace-nowrap">
                   پوهنتون
                 </span>
               </div>
-              <span className="text-[11px] sm:text-xs text-neutral-textMuted tracking-normal">
+              <span className="text-[10px] xl:text-xs text-neutral-textMuted tracking-normal whitespace-nowrap hidden sm:inline-block">
                 Aspiring for Quality Education with Relevance
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation Links with Dropdowns */}
-          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
             {NAVIGATION_ITEMS.map((item) => (
               <div
                 key={item.title}
@@ -262,16 +262,16 @@ export default function Navbar() {
               >
                 <button
                   type="button"
-                  className={`flex items-center gap-1 px-3 py-2 text-sm font-semibold transition-colors rounded-lg ${
+                  className={`flex items-center gap-1 px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-semibold transition-colors rounded-lg whitespace-nowrap shrink-0 ${
                     activeDropdown === item.title
                       ? 'text-primary bg-primary-muted/60'
                       : 'text-neutral-dark hover:text-primary hover:bg-neutral-slate/80'
                   }`}
                   aria-expanded={activeDropdown === item.title}
                 >
-                  <span>{item.title}</span>
+                  <span className="whitespace-nowrap">{item.title}</span>
                   <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${
+                    className={`w-3.5 h-3.5 shrink-0 transition-transform duration-200 ${
                       activeDropdown === item.title ? 'rotate-180 text-secondary' : 'text-neutral-textMuted'
                     }`}
                   />
@@ -330,14 +330,16 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action: Apply Now Button & Mobile Hamburger */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5 xl:gap-3 shrink-0">
             <Link
               href="https://cms1.uswat.edu.pk"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-secondary hover:bg-secondary-dark text-primary font-bold text-sm shadow-soft transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center justify-center gap-1.5 px-3.5 xl:px-5 py-2 xl:py-2.5 rounded-xl bg-secondary hover:bg-secondary-dark text-primary font-bold text-xs xl:text-sm shadow-soft transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap shrink-0"
             >
-              <span>Apply Now</span>
+              <span className="whitespace-nowrap">Apply Now</span>
+              <Sparkles className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-primary shrink-0" />
+            </Link>
               <Sparkles className="w-4 h-4 text-primary" />
             </Link>
 

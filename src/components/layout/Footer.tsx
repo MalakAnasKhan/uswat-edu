@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#072d1b] text-white border-t-4 border-secondary">
       {/* Main Footer Container */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 pt-14 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
           {/* Col 1: University Identity */}
           <div className="lg:col-span-2 space-y-4">

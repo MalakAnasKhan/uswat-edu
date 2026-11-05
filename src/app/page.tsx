@@ -39,7 +39,7 @@ export default function HomePage() {
 
       {/* 5. Academic Programs & Faculties Showcase (Target for 'Explore Programs' anchor) */}
       <section id="programs" className="py-16 sm:py-20 bg-white border-y border-neutral-slate scroll-mt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
             <span className="text-xs font-bold uppercase tracking-wider text-secondary">
               Faculties & Curricula

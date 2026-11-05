@@ -56,7 +56,7 @@ const QUICK_LINKS: QuickLinkItem[] = [
 
 export default function QuickLinks() {
   return (
-    <section className="relative z-20 -mt-8 sm:-mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative z-20 -mt-8 sm:-mt-12 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {QUICK_LINKS.map((item) => {
           const Icon = item.icon;

@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'University of Swat | Official University Portal',
     description:
-      'Empowering minds, preserving heritage, and cultivating research in the valley of Swat.',
+      'Cultivating academic excellence, inspiring innovation, and empowering students across the scenic valley of Swat.',
     url: 'https://uswat.edu.pk',
     siteName: 'University of Swat',
     images: [

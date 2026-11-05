@@ -36,7 +36,7 @@ export default function Hero() {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-20 sm:pb-28">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 pt-16 sm:pt-24 pb-20 sm:pb-28">
         <div className="max-w-3xl space-y-6 sm:space-y-8">
           {/* Institutional Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs text-secondary-light font-medium tracking-wide shadow-sm">
@@ -48,15 +48,18 @@ export default function Hero() {
 
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-extrabold tracking-tight leading-[1.15] sm:leading-[1.15]">
-            Preserving Heritage,{' '}
-            <span className="text-secondary">Cultivating Knowledge</span>,{' '}
-            Shaping the Future
+            Cultivating Academic Excellence,{' '}
+            <span className="text-secondary">Inspiring Innovation</span>,{' '}
+            Empowering Swat
           </h1>
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg lg:text-xl text-white/85 font-normal leading-relaxed max-w-2xl">
-            A premier public sector university empowering Khyber Pakhtunkhwa through
-            academic excellence, innovation, and leadership.
+            A premier public sector university embodying our motto{' '}
+            <span className="italic text-secondary-light font-medium">
+              "Aspiring for Quality Education with Relevance"
+            </span>{' '}
+            and driving socio-economic transformation across Khyber Pakhtunkhwa.
           </p>
 
           {/* Action Buttons */}

@@ -8,7 +8,7 @@ import { Quote, ArrowRight, Award, MapPin, Sparkles, ShieldCheck } from 'lucide-
 export default function VCSpotlight() {
   return (
     <section className="py-16 sm:py-20 bg-neutral-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         <div className="bg-white rounded-3xl border border-neutral-border p-6 sm:p-10 lg:p-12 shadow-soft">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left: VC Portrait Frame */}
