@@ -205,13 +205,13 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Brand Logo & Title Area */}
           <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden bg-primary-muted border-2 border-secondary/40 flex items-center justify-center shadow-soft group-hover:scale-105 transition-transform">
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
               <Image
                 src="/images/Logo.png"
                 alt="University of Swat Crest"
                 fill
                 sizes="(max-width: 640px) 48px, 56px"
-                className="object-contain p-1"
+                className="object-contain"
                 priority
               />
             </div>
@@ -357,13 +357,13 @@ export default function Navbar() {
               {/* Drawer Header */}
               <div className="flex items-center justify-between p-4 border-b border-neutral-slate bg-neutral-light">
                 <div className="flex items-center gap-2.5">
-                  <div className="relative w-10 h-10 rounded-full overflow-hidden bg-primary-muted border border-secondary">
+                  <div className="relative w-10 h-10 flex items-center justify-center shrink-0">
                     <Image
-                      src="/images/Logo.png"
-                      alt="UoS"
+                      src="/images/icon.png"
+                      alt="University of Swat"
                       fill
                       sizes="40px"
-                      className="object-contain p-1"
+                      className="object-contain"
                     />
                   </div>
                   <div>

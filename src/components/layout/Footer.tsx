@@ -12,12 +12,12 @@ export default function Footer() {
           {/* Col 1: University Identity */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3.5">
-              <div className="relative w-14 h-14 rounded-full overflow-hidden bg-white/10 p-1 border border-secondary/50">
+              <div className="relative w-12 h-12 flex items-center justify-center shrink-0">
                 <Image
-                  src="/images/Logo.png"
+                  src="/images/icon.png"
                   alt="University of Swat Emblem"
                   fill
-                  sizes="56px"
+                  sizes="48px"
                   className="object-contain"
                 />
               </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import {
   Search,
   Printer,
@@ -256,14 +257,25 @@ export default function ResultChecker() {
         <div className="mt-8 border-2 border-primary/20 rounded-3xl overflow-hidden bg-white shadow-card print:border-none print:shadow-none">
           {/* DMC Header */}
           <div className="bg-[#073620] text-white p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-secondary">
-                Provisional Detailed Marks Certificate (DMC)
-              </span>
-              <h3 className="font-serif font-bold text-xl sm:text-2xl mt-1">
-                University of Swat — Examination Directorate
-              </h3>
-              <p className="text-xs text-white/80 mt-1">{result.semester}</p>
+            <div className="flex items-center gap-3.5">
+              <div className="relative w-12 h-12 shrink-0 flex items-center justify-center">
+                <Image
+                  src="/images/icon.png"
+                  alt="University of Swat Seal"
+                  fill
+                  sizes="48px"
+                  className="object-contain"
+                />
+              </div>
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-secondary">
+                  Provisional Detailed Marks Certificate (DMC)
+                </span>
+                <h3 className="font-serif font-bold text-xl sm:text-2xl mt-1">
+                  University of Swat — Examination Directorate
+                </h3>
+                <p className="text-xs text-white/80 mt-1">{result.semester}</p>
+              </div>
             </div>
 
             <div className="shrink-0 flex items-center gap-2">

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo, useRef } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, X, BookOpen, FileText, Bell, ExternalLink, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -235,7 +236,10 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
 
             {/* Footer */}
             <div className="px-4 py-2.5 bg-neutral-light border-t border-neutral-slate text-[11px] text-neutral-textMuted flex items-center justify-between">
-              <span>University of Swat Fast Search Engine</span>
+              <span className="flex items-center gap-2">
+                <Image src="/images/icon.png" alt="University of Swat" width={16} height={16} className="inline-block object-contain" />
+                <span>University of Swat Fast Search Engine</span>
+              </span>
               <span className="flex items-center gap-2">
                 <span>Navigate</span>
                 <kbd className="px-1.5 py-0.5 bg-white border border-neutral-border rounded text-[10px]">↑</kbd>

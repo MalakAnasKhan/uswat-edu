@@ -29,13 +29,13 @@ export default function NotFound() {
   return (
     <div className="min-h-[75vh] flex items-center justify-center py-16 px-4 sm:px-6 bg-neutral-light">
       <div className="max-w-xl w-full bg-white rounded-3xl p-8 sm:p-12 border border-neutral-border shadow-soft text-center space-y-6">
-        {/* Swat Crest Placeholder Frame */}
-        <div className="relative w-24 h-24 mx-auto rounded-full overflow-hidden bg-primary-muted border-4 border-secondary p-1 shadow-dropdown">
+        {/* Swat Crest Emblem */}
+        <div className="relative w-20 h-20 mx-auto flex items-center justify-center">
           <Image
-            src="/images/Logo.png"
+            src="/images/icon.png"
             alt="University of Swat Crest"
             fill
-            className="object-contain p-1"
+            className="object-contain"
             priority
           />
         </div>
