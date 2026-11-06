@@ -120,7 +120,7 @@ const NAVIGATION_ITEMS: NavItem[] = [
     ],
   },
   {
-    title: 'Examinations',
+    title: 'Exams',
     items: [
       {
         name: 'Date Sheets',
@@ -145,7 +145,7 @@ const NAVIGATION_ITEMS: NavItem[] = [
     ],
   },
   {
-    title: 'Research & ORIC',
+    title: 'Research',
     items: [
       {
         name: 'Research Journals',
@@ -165,7 +165,7 @@ const NAVIGATION_ITEMS: NavItem[] = [
     ],
   },
   {
-    title: 'News & Media',
+    title: 'News',
     items: [
       {
         name: 'Latest News & Stories',
@@ -218,26 +218,25 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-40 w-full transition-all duration-200 bg-white ${
-        isScrolled ? 'shadow-md border-b border-neutral-border' : 'border-b border-neutral-slate'
-      }`}
+      className={`sticky top-0 z-40 w-full transition-all duration-200 bg-white overflow-x-clip ${isScrolled ? 'shadow-md border-b border-neutral-border' : 'border-b border-neutral-slate'
+        }`}
     >
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6 xl:px-8">
         <div className="flex items-center justify-between h-20 gap-2 xl:gap-4">
           {/* Brand Logo & Title Area */}
-          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-            <div className="relative w-11 h-11 sm:w-13 sm:h-13 xl:w-14 xl:h-14 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 group shrink-0">
+            <div className="relative w-10 h-10 sm:w-11 sm:h-11 xl:w-12 xl:h-12 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
               <Image
                 src="/images/Logo.png"
                 alt="University of Swat Crest"
                 fill
-                sizes="(max-width: 640px) 44px, 56px"
+                sizes="48px"
                 className="object-contain"
                 priority
               />
             </div>
             <div className="flex flex-col">
-              <div className="flex items-center gap-1.5 sm:gap-2">
+              <div className="flex items-center gap-1.5">
                 <span className="font-extrabold text-base sm:text-lg xl:text-xl tracking-tight text-primary font-serif whitespace-nowrap">
                   University of Swat
                 </span>
@@ -245,14 +244,17 @@ export default function Navbar() {
                   پوهنتون
                 </span>
               </div>
-              <span className="text-[10px] xl:text-xs text-neutral-textMuted tracking-normal whitespace-nowrap hidden sm:inline-block">
+              <span className="text-[11px] text-neutral-textMuted tracking-normal whitespace-nowrap hidden 2xl:inline-block">
                 Aspiring for Quality Education with Relevance
+              </span>
+              <span className="text-[10px] text-neutral-textMuted tracking-normal whitespace-nowrap hidden xl:inline-block 2xl:hidden">
+                Charbagh, Swat
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation Links with Dropdowns */}
-          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
             {NAVIGATION_ITEMS.map((item) => (
               <div
                 key={item.title}
@@ -262,18 +264,16 @@ export default function Navbar() {
               >
                 <button
                   type="button"
-                  className={`flex items-center gap-1 px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-semibold transition-colors rounded-lg whitespace-nowrap shrink-0 ${
-                    activeDropdown === item.title
+                  className={`flex items-center gap-1 px-2 xl:px-2.5 py-2 text-xs xl:text-sm font-semibold transition-colors rounded-lg whitespace-nowrap shrink-0 ${activeDropdown === item.title
                       ? 'text-primary bg-primary-muted/60'
                       : 'text-neutral-dark hover:text-primary hover:bg-neutral-slate/80'
-                  }`}
+                    }`}
                   aria-expanded={activeDropdown === item.title}
                 >
                   <span className="whitespace-nowrap">{item.title}</span>
                   <ChevronDown
-                    className={`w-3.5 h-3.5 shrink-0 transition-transform duration-200 ${
-                      activeDropdown === item.title ? 'rotate-180 text-secondary' : 'text-neutral-textMuted'
-                    }`}
+                    className={`w-3.5 h-3.5 shrink-0 transition-transform duration-200 ${activeDropdown === item.title ? 'rotate-180 text-secondary' : 'text-neutral-textMuted'
+                      }`}
                   />
                 </button>
 
@@ -288,7 +288,7 @@ export default function Navbar() {
                       className="absolute left-0 mt-1 w-72 xl:w-80 rounded-2xl bg-white shadow-dropdown border border-neutral-border/80 p-2 z-50 overflow-hidden"
                     >
                       <div className="text-[10px] uppercase font-bold tracking-wider text-secondary px-3 pt-2 pb-1">
-                        {item.title} Directory
+                        {item.title === 'Exams' ? 'Examinations & Results' : item.title === 'Research' ? 'Research & ORIC' : item.title === 'News' ? 'News & Media' : item.title} Directory
                       </div>
                       <div className="space-y-0.5">
                         {item.items?.map((subItem) => (
@@ -330,184 +330,188 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action: Apply Now Button & Mobile Hamburger */}
-          <div className="flex items-center gap-2.5 xl:gap-3 shrink-0">
+          <div className="flex items-center gap-2 xl:gap-3 shrink-0">
             <Link
               href="https://cms1.uswat.edu.pk"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 px-3.5 xl:px-5 py-2 xl:py-2.5 rounded-xl bg-secondary hover:bg-secondary-dark text-primary font-bold text-xs xl:text-sm shadow-soft transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap shrink-0"
+              className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl bg-secondary hover:bg-secondary-dark text-primary font-bold text-xs xl:text-sm shadow-soft transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap shrink-0"
             >
               <span className="whitespace-nowrap">Apply Now</span>
-              <Sparkles className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-primary shrink-0" />
+              <Sparkles className="w-3.5 h-3.5 text-primary shrink-0" />
             </Link>
 
             {/* Mobile menu trigger */}
             <button
               onClick={() => setMobileMenuOpen(true)}
               type="button"
-              className="lg:hidden p-2.5 rounded-xl bg-neutral-slate text-neutral-dark hover:text-primary hover:bg-neutral-border/60 transition-colors"
+              className="lg:hidden p-2 rounded-xl bg-neutral-slate text-neutral-dark hover:text-primary hover:bg-neutral-border/60 transition-colors shrink-0"
               aria-label="Open Navigation Menu"
             >
-              <Menu className="w-6 h-6" />
+              <Menu className="w-5 h-5" />
             </button>
           </div>
-        </div>
+          <Menu className="w-6 h-6" />
+        </button>
       </div>
+    </div>
+      </div >
 
-      {/* Mobile Drawer (Responsive Drawer with Accessible Accordions) */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <div className="fixed inset-0 z-50 lg:hidden">
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+    {/* Mobile Drawer (Responsive Drawer with Accessible Accordions) */ }
+    <AnimatePresence>
+  {
+    mobileMenuOpen && (
+      <div className="fixed inset-0 z-50 lg:hidden">
+        {/* Backdrop */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setMobileMenuOpen(false)}
+          className="fixed inset-0 bg-neutral-dark/60 backdrop-blur-sm"
+        />
+
+        {/* Sliding Panel */}
+        <motion.div
+          initial={{ x: '100%' }}
+          animate={{ x: 0 }}
+          exit={{ x: '100%' }}
+          transition={{ type: 'spring', damping: 25, stiffness: 240 }}
+          className="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl flex flex-col z-10 overflow-hidden"
+        >
+          {/* Drawer Header */}
+          <div className="flex items-center justify-between p-4 border-b border-neutral-slate bg-neutral-light">
+            <div className="flex items-center gap-2.5">
+              <div className="relative w-10 h-10 flex items-center justify-center shrink-0">
+                <Image
+                  src="/images/icon.png"
+                  alt="University of Swat"
+                  fill
+                  sizes="40px"
+                  className="object-contain"
+                />
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-primary font-serif">University of Swat</h3>
+                <p className="text-[11px] text-neutral-textMuted">Charbagh, Swat</p>
+              </div>
+            </div>
+
+            <button
               onClick={() => setMobileMenuOpen(false)}
-              className="fixed inset-0 bg-neutral-dark/60 backdrop-blur-sm"
-            />
-
-            {/* Sliding Panel */}
-            <motion.div
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 240 }}
-              className="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl flex flex-col z-10 overflow-hidden"
+              type="button"
+              className="p-2 rounded-lg text-neutral-textMuted hover:text-neutral-dark hover:bg-neutral-slate transition-colors"
+              aria-label="Close Navigation Drawer"
             >
-              {/* Drawer Header */}
-              <div className="flex items-center justify-between p-4 border-b border-neutral-slate bg-neutral-light">
-                <div className="flex items-center gap-2.5">
-                  <div className="relative w-10 h-10 flex items-center justify-center shrink-0">
-                    <Image
-                      src="/images/icon.png"
-                      alt="University of Swat"
-                      fill
-                      sizes="40px"
-                      className="object-contain"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-primary font-serif">University of Swat</h3>
-                    <p className="text-[11px] text-neutral-textMuted">Charbagh, Swat</p>
-                  </div>
-                </div>
-
-                <button
-                  onClick={() => setMobileMenuOpen(false)}
-                  type="button"
-                  className="p-2 rounded-lg text-neutral-textMuted hover:text-neutral-dark hover:bg-neutral-slate transition-colors"
-                  aria-label="Close Navigation Drawer"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              {/* Drawer Body: Accessible Accordion Nav */}
-              <div className="flex-1 overflow-y-auto p-4 space-y-2">
-                {NAVIGATION_ITEMS.map((item) => {
-                  const isExpanded = mobileExpandedSection === item.title;
-                  return (
-                    <div
-                      key={item.title}
-                      className="border border-neutral-slate rounded-xl overflow-hidden bg-white"
-                    >
-                      <button
-                        onClick={() => toggleMobileAccordion(item.title)}
-                        type="button"
-                        className="w-full flex items-center justify-between p-3.5 text-left text-sm font-semibold text-neutral-dark hover:text-primary hover:bg-neutral-slate/50 transition-colors"
-                        aria-expanded={isExpanded}
-                      >
-                        <span>{item.title}</span>
-                        <ChevronDown
-                          className={`w-4 h-4 text-neutral-textMuted transition-transform duration-200 ${
-                            isExpanded ? 'rotate-180 text-secondary-dark' : ''
-                          }`}
-                        />
-                      </button>
-
-                      <AnimatePresence>
-                        {isExpanded && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="bg-neutral-light/60 border-t border-neutral-slate px-3 py-2 space-y-1"
-                          >
-                            {item.items?.map((sub) => (
-                              <Link
-                                key={sub.name}
-                                href={sub.href}
-                                target={sub.href.startsWith('http') ? '_blank' : undefined}
-                                rel={sub.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                onClick={() => setMobileMenuOpen(false)}
-                                className="flex items-center justify-between p-2 rounded-lg text-xs font-medium text-neutral-dark hover:bg-white hover:text-primary transition-colors"
-                              >
-                                <span>{sub.name}</span>
-                                {sub.badge && (
-                                  <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-secondary text-primary">
-                                    {sub.badge}
-                                  </span>
-                                )}
-                              </Link>
-                            ))}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  );
-                })}
-
-                {/* Additional Quick Links */}
-                <div className="pt-4 border-t border-neutral-slate space-y-2">
-                  <a
-                    href="https://cms1.uswat.edu.pk"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between p-3 rounded-xl bg-emerald-50 text-primary border border-emerald-100 text-xs font-semibold"
-                  >
-                    <div className="flex items-center gap-2">
-                      <GraduationCap className="w-4 h-4 text-primary" />
-                      <span>Student Portal / CMS</span>
-                    </div>
-                    <ExternalLink className="w-3.5 h-3.5 text-primary" />
-                  </a>
-
-                  <Link
-                    href="/downloads"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center justify-between p-3 rounded-xl bg-neutral-slate text-neutral-dark text-xs font-semibold"
-                  >
-                    <div className="flex items-center gap-2">
-                      <FileCheck2 className="w-4 h-4 text-secondary-dark" />
-                      <span>Examination Downloads & Forms</span>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Drawer Footer */}
-              <div className="p-4 border-t border-neutral-slate bg-neutral-light">
-                <Link
-                  href="https://cms1.uswat.edu.pk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-secondary hover:bg-secondary-dark text-primary font-bold text-sm shadow-md transition-all"
-                >
-                  <span>Apply Now Online</span>
-                  <Sparkles className="w-4 h-4" />
-                </Link>
-                <div className="mt-3 text-center text-[11px] text-neutral-textMuted">
-                  Inquiries: info@uswat.edu.pk | +92 946 9240446
-                </div>
-              </div>
-            </motion.div>
+              <X className="w-5 h-5" />
+            </button>
           </div>
-        )}
-      </AnimatePresence>
-    </header>
+
+          {/* Drawer Body: Accessible Accordion Nav */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-2">
+            {NAVIGATION_ITEMS.map((item) => {
+              const isExpanded = mobileExpandedSection === item.title;
+              return (
+                <div
+                  key={item.title}
+                  className="border border-neutral-slate rounded-xl overflow-hidden bg-white"
+                >
+                  <button
+                    onClick={() => toggleMobileAccordion(item.title)}
+                    type="button"
+                    className="w-full flex items-center justify-between p-3.5 text-left text-sm font-semibold text-neutral-dark hover:text-primary hover:bg-neutral-slate/50 transition-colors"
+                    aria-expanded={isExpanded}
+                  >
+                    <span>{item.title}</span>
+                    <ChevronDown
+                      className={`w-4 h-4 text-neutral-textMuted transition-transform duration-200 ${isExpanded ? 'rotate-180 text-secondary-dark' : ''
+                        }`}
+                    />
+                  </button>
+
+                  <AnimatePresence>
+                    {isExpanded && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="bg-neutral-light/60 border-t border-neutral-slate px-3 py-2 space-y-1"
+                      >
+                        {item.items?.map((sub) => (
+                          <Link
+                            key={sub.name}
+                            href={sub.href}
+                            target={sub.href.startsWith('http') ? '_blank' : undefined}
+                            rel={sub.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="flex items-center justify-between p-2 rounded-lg text-xs font-medium text-neutral-dark hover:bg-white hover:text-primary transition-colors"
+                          >
+                            <span>{sub.name}</span>
+                            {sub.badge && (
+                              <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-secondary text-primary">
+                                {sub.badge}
+                              </span>
+                            )}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+
+            {/* Additional Quick Links */}
+            <div className="pt-4 border-t border-neutral-slate space-y-2">
+              <a
+                href="https://cms1.uswat.edu.pk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-3 rounded-xl bg-emerald-50 text-primary border border-emerald-100 text-xs font-semibold"
+              >
+                <div className="flex items-center gap-2">
+                  <GraduationCap className="w-4 h-4 text-primary" />
+                  <span>Student Portal / CMS</span>
+                </div>
+                <ExternalLink className="w-3.5 h-3.5 text-primary" />
+              </a>
+
+              <Link
+                href="/downloads"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-between p-3 rounded-xl bg-neutral-slate text-neutral-dark text-xs font-semibold"
+              >
+                <div className="flex items-center gap-2">
+                  <FileCheck2 className="w-4 h-4 text-secondary-dark" />
+                  <span>Examination Downloads & Forms</span>
+                </div>
+              </Link>
+            </div>
+          </div>
+
+          {/* Drawer Footer */}
+          <div className="p-4 border-t border-neutral-slate bg-neutral-light">
+            <Link
+              href="https://cms1.uswat.edu.pk"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-secondary hover:bg-secondary-dark text-primary font-bold text-sm shadow-md transition-all"
+            >
+              <span>Apply Now Online</span>
+              <Sparkles className="w-4 h-4" />
+            </Link>
+            <div className="mt-3 text-center text-[11px] text-neutral-textMuted">
+              Inquiries: info@uswat.edu.pk | +92 946 9240446
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    )
+  }
+      </AnimatePresence >
+    </header >
   );
 }
 

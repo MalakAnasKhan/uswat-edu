@@ -89,7 +89,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth overflow-x-hidden">
       <head>
         <link rel="icon" href="/images/icon.png" type="image/png" />
         <link rel="shortcut icon" href="/images/icon.png" type="image/png" />
@@ -101,7 +101,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-sans antialiased min-h-screen flex flex-col bg-neutral-light text-neutral-dark selection:bg-secondary selection:text-primary">
+      <body className="font-sans antialiased min-h-screen flex flex-col bg-neutral-light text-neutral-dark selection:bg-secondary selection:text-primary overflow-x-hidden w-full">
         {/* Top Utility Bar */}
         <TopBar />
 

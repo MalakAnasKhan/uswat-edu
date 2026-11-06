@@ -31,7 +31,7 @@ export default function LatestNews() {
   const gridArticles = filtered.filter((a) => a.id !== featured?.id).slice(0, 4);
 
   return (
-    <section className="py-16 sm:py-20 bg-white border-b border-neutral-slate">
+    <section className="py-16 sm:py-20 bg-white border-b border-neutral-slate overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
@@ -78,11 +78,10 @@ export default function LatestNews() {
               key={cat}
               onClick={() => setSelectedCategory(cat)}
               type="button"
-              className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
-                selectedCategory === cat
+              className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${selectedCategory === cat
                   ? 'bg-primary text-white shadow-soft'
                   : 'bg-neutral-light text-neutral-charcoal hover:bg-neutral-slate'
-              }`}
+                }`}
             >
               {cat}
             </button>

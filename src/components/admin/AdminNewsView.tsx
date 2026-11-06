@@ -610,11 +610,10 @@ export default function AdminNewsView() {
                       key={preset.url}
                       type="button"
                       onClick={() => setFormImageUrl(preset.url)}
-                      className={`p-2 rounded-xl border text-left transition-all flex flex-col gap-1.5 ${
-                        formImageUrl === preset.url
-                          ? 'border-primary bg-primary-muted/40 ring-2 ring-primary/20'
-                          : 'border-neutral-border hover:bg-neutral-light'
-                      }`}
+                      className={`p-2 rounded-xl border text-left transition-all flex flex-col gap-1.5 ${formImageUrl === preset.url
+                        ? 'border-primary bg-primary-muted/40 ring-2 ring-primary/20'
+                        : 'border-neutral-border hover:bg-neutral-light'
+                        }`}
                     >
                       <div className="relative w-full h-16 rounded-lg overflow-hidden bg-neutral-slate">
                         <Image src={preset.url} alt={preset.label} fill sizes="120px" className="object-cover" />

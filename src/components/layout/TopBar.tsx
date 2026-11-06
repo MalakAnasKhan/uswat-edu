@@ -10,11 +10,11 @@ export default function TopBar() {
 
   return (
     <>
-      <div className="bg-[#073620] text-white/90 text-xs border-b border-emerald-900/40 select-none">
+      <div className="bg-[#073620] text-white/90 text-xs border-b border-emerald-900/40 select-none overflow-hidden">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="flex items-center justify-between h-9 sm:h-10">
+          <div className="flex items-center justify-between h-9 sm:h-10 gap-3">
             {/* Left Utility Info */}
-            <div className="flex items-center space-x-3 sm:space-x-6 overflow-x-auto py-1 scrollbar-none">
+            <div className="flex items-center space-x-3 sm:space-x-5 overflow-hidden py-1 shrink-0">
               <a
                 href="tel:+929469240446"
                 className="flex items-center gap-1.5 hover:text-secondary-light transition-colors shrink-0"
